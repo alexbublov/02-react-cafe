@@ -2,7 +2,7 @@ import { useState } from 'react';
 import type { Votes } from '../../types/votes';
 import CafeInfo from '../CafeInfo/CafeInfo';
 import css from './App.module.css';
-import type { Votetype } from '../../types/votes';
+import type { VoteType } from '../../types/votes';
 import VoteOptions from '../VoteOptions/VoteOptions';
 import VoteStats from '../VoteStats/VoteStats';
 import Notification from '../Notification/Notification';
@@ -13,7 +13,7 @@ const App = () => {
   const positiveRate =
     totalVotes > 0 ? Math.round((votes.good / totalVotes) * 100) : 0;
 
-  const handleVote = (vote: Votetype) => {
+  const handleVote = (vote: VoteType) => {
     const newVotes = { ...votes, [vote]: votes[vote] + 1 };
     setVotes(newVotes);
   };
